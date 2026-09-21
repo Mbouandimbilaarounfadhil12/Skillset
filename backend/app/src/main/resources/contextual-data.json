@@ -1,0 +1,171 @@
+{
+  "countries": [
+    {
+      "code": "CM",
+      "name": "Cameroun",
+      "currency": "XAF",
+      "currencySymbol": "FCFA",
+      "phonePrefix": "+237",
+      "salaryPeriod": "mensuel",
+      "languages": ["Français", "Anglais"],
+      "regions": ["Centre", "Littoral", "Ouest", "Nord", "Extrême-Nord", "Adamaoua", "Est", "Sud", "Nord-Ouest", "Sud-Ouest"]
+    },
+    {
+      "code": "FR",
+      "name": "France",
+      "currency": "EUR",
+      "currencySymbol": "€",
+      "phonePrefix": "+33",
+      "salaryPeriod": "annuel",
+      "languages": ["Français"],
+      "regions": ["Île-de-France", "PACA", "Auvergne-Rhône-Alpes", "Occitanie", "Nouvelle-Aquitaine", "Grand Est", "Bretagne", "Normandie", "Hauts-de-France"]
+    },
+    {
+      "code": "SN",
+      "name": "Sénégal",
+      "currency": "XOF",
+      "currencySymbol": "FCFA",
+      "phonePrefix": "+221",
+      "salaryPeriod": "mensuel",
+      "languages": ["Français", "Wolof"],
+      "regions": ["Dakar", "Thiès", "Saint-Louis", "Ziguinchor", "Kaolack", "Fatick", "Kolda", "Louga"]
+    },
+    {
+      "code": "CI",
+      "name": "Côte d'Ivoire",
+      "currency": "XOF",
+      "currencySymbol": "FCFA",
+      "phonePrefix": "+225",
+      "salaryPeriod": "mensuel",
+      "languages": ["Français"],
+      "regions": ["Abidjan", "Bouaké", "Yamoussoukro", "Korhogo", "San Pédro", "Daloa", "Man"]
+    },
+    {
+      "code": "MA",
+      "name": "Maroc",
+      "currency": "MAD",
+      "currencySymbol": "DH",
+      "phonePrefix": "+212",
+      "salaryPeriod": "mensuel",
+      "languages": ["Français", "Arabe", "Amazigh"],
+      "regions": ["Casablanca", "Rabat", "Marrakech", "Fès", "Tanger", "Agadir", "Meknès", "Oujda"]
+    },
+    {
+      "code": "TN",
+      "name": "Tunisie",
+      "currency": "TND",
+      "currencySymbol": "DT",
+      "phonePrefix": "+216",
+      "salaryPeriod": "mensuel",
+      "languages": ["Français", "Arabe"],
+      "regions": ["Tunis", "Sfax", "Sousse", "Kairouan", "Bizerte", "Gabès", "Ariana"]
+    },
+    {
+      "code": "BE",
+      "name": "Belgique",
+      "currency": "EUR",
+      "currencySymbol": "€",
+      "phonePrefix": "+32",
+      "salaryPeriod": "annuel",
+      "languages": ["Français", "Néerlandais", "Allemand"],
+      "regions": ["Bruxelles", "Wallonie", "Flandre", "Liège", "Charleroi", "Namur"]
+    },
+    {
+      "code": "CH",
+      "name": "Suisse",
+      "currency": "CHF",
+      "currencySymbol": "CHF",
+      "phonePrefix": "+41",
+      "salaryPeriod": "annuel",
+      "languages": ["Français", "Allemand", "Italien"],
+      "regions": ["Genève", "Zurich", "Berne", "Lausanne", "Bâle", "Lugano", "Lucerne"]
+    },
+    {
+      "code": "GA",
+      "name": "Gabon",
+      "currency": "XAF",
+      "currencySymbol": "FCFA",
+      "phonePrefix": "+241",
+      "salaryPeriod": "mensuel",
+      "languages": ["Français"],
+      "regions": ["Libreville", "Port-Gentil", "Franceville", "Oyem", "Moanda", "Lambaréné"]
+    },
+    {
+      "code": "CD",
+      "name": "Congo RDC",
+      "currency": "CDF",
+      "currencySymbol": "FC",
+      "phonePrefix": "+243",
+      "salaryPeriod": "mensuel",
+      "languages": ["Français", "Lingala", "Swahili"],
+      "regions": ["Kinshasa", "Lubumbashi", "Mbuji-Mayi", "Kananga", "Kisangani", "Bukavu"]
+    },
+    {
+      "code": "CG",
+      "name": "Congo Brazzaville",
+      "currency": "XAF",
+      "currencySymbol": "FCFA",
+      "phonePrefix": "+242",
+      "salaryPeriod": "mensuel",
+      "languages": ["Français"],
+      "regions": ["Brazzaville", "Pointe-Noire", "Dolisie", "Nkayi", "Impfondo"]
+    },
+    {
+      "code": "CA",
+      "name": "Canada",
+      "currency": "CAD",
+      "currencySymbol": "CA$",
+      "phonePrefix": "+1",
+      "salaryPeriod": "annuel",
+      "languages": ["Français", "Anglais"],
+      "regions": ["Québec", "Ontario", "Colombie-Britannique", "Alberta", "Manitoba", "Nouveau-Brunswick"]
+    }
+  ],
+  "citiesByCountry": {
+    "CM": ["Yaoundé", "Douala", "Bafoussam", "Garoua", "Bamenda", "Maroua", "Ngaoundéré", "Bertoua", "Ebolowa", "Kribi", "Limbé", "Kumba"],
+    "FR": ["Paris", "Lyon", "Marseille", "Toulouse", "Nice", "Nantes", "Strasbourg", "Bordeaux", "Lille", "Rennes", "Reims", "Montpellier"],
+    "SN": ["Dakar", "Thiès", "Saint-Louis", "Ziguinchor", "Kaolack", "Mbour", "Rufisque", "Touba"],
+    "CI": ["Abidjan", "Bouaké", "Yamoussoukro", "Korhogo", "San Pédro", "Daloa", "Man", "Divo"],
+    "MA": ["Casablanca", "Rabat", "Marrakech", "Fès", "Tanger", "Agadir", "Meknès", "Oujda", "Tétouan"],
+    "TN": ["Tunis", "Sfax", "Sousse", "Kairouan", "Bizerte", "Gabès", "Ariana", "La Marsa"],
+    "BE": ["Bruxelles", "Liège", "Charleroi", "Anvers", "Gand", "Bruges", "Namur", "Mons"],
+    "CH": ["Genève", "Zurich", "Berne", "Lausanne", "Bâle", "Lugano", "Lucerne", "Saint-Gall"],
+    "GA": ["Libreville", "Port-Gentil", "Franceville", "Oyem", "Moanda", "Lambaréné"],
+    "CD": ["Kinshasa", "Lubumbashi", "Mbuji-Mayi", "Kananga", "Kisangani", "Bukavu", "Goma"],
+    "CG": ["Brazzaville", "Pointe-Noire", "Dolisie", "Nkayi", "Impfondo", "Ouesso"],
+    "CA": ["Montréal", "Toronto", "Vancouver", "Québec", "Ottawa", "Calgary", "Edmonton", "Winnipeg"]
+  },
+  "contractTypesByCountry": {
+    "CM": ["CDI", "CDD", "Stage", "Freelance", "Consultant", "Bénévolat"],
+    "FR": ["CDI", "CDD", "Stage", "Alternance", "Freelance", "Intérim", "VIE", "CDII"],
+    "SN": ["CDI", "CDD", "Stage", "Freelance", "Consultant"],
+    "CI": ["CDI", "CDD", "Stage", "Freelance", "Consultant"],
+    "MA": ["CDI", "CDD", "Stage", "Freelance", "ANAPEC"],
+    "TN": ["CDI", "CDD", "Stage", "Freelance", "SIVP"],
+    "BE": ["CDI", "CDD", "Stage", "Freelance", "Intérim", "Étudiant"],
+    "CH": ["CDI", "CDD", "Stage", "Freelance", "Temporaire"],
+    "GA": ["CDI", "CDD", "Stage", "Freelance", "Consultant"],
+    "CD": ["CDI", "CDD", "Stage", "Freelance", "Consultant"],
+    "CG": ["CDI", "CDD", "Stage", "Freelance", "Consultant"],
+    "CA": ["Permanent", "Contractuel", "Stage", "Freelance", "Temps partiel"]
+  },
+  "workModesByCountry": {
+    "CM": ["Présentiel", "Hybride", "Télétravail"],
+    "FR": ["Présentiel", "Hybride", "Full remote", "Télétravail partiel"],
+    "SN": ["Présentiel", "Hybride", "Télétravail"],
+    "CI": ["Présentiel", "Hybride", "Télétravail"],
+    "MA": ["Présentiel", "Hybride", "Télétravail"],
+    "TN": ["Présentiel", "Hybride", "Télétravail"],
+    "BE": ["Présentiel", "Hybride", "Full remote"],
+    "CH": ["Présentiel", "Hybride", "Full remote"],
+    "GA": ["Présentiel", "Hybride", "Télétravail"],
+    "CD": ["Présentiel", "Hybride", "Télétravail"],
+    "CG": ["Présentiel", "Hybride", "Télétravail"],
+    "CA": ["Présentiel", "Hybride", "Full remote", "Télétravail"]
+  },
+  "cvFormatByCountry": {
+    "withPhoto": ["CM", "SN", "CI", "MA", "TN", "GA", "CD", "CG"],
+    "withPersonalDetails": ["CM", "SN", "CI", "MA", "TN", "GA", "CD", "CG"],
+    "rgpdStrict": ["FR", "BE", "CH", "CA"]
+  }
+}
