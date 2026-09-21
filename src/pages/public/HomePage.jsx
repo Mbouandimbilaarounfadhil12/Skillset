@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import {
   Sparkles, Briefcase, Users, Clock, TrendingUp,
   Target, FileText, ShieldCheck, KeyRound, Flag,
-  Globe, Plus, Minus,
+  Globe, Plus, Minus, ArrowRight, Bot, Rocket,
+  CheckCircle2,
 } from 'lucide-react'
 import PublicNavbar from '../../components/common/PublicNavbar'
 import Footer from '../../components/common/Footer'
@@ -49,6 +51,17 @@ export default function HomePage() {
 
         <p className="lp-hero-sub">{t.heroSub}</p>
 
+        <div className="lp-hero-actions">
+          <Link to="/register" className="lp-hero-cta">Create account</Link>
+          <Link to="/login" className="lp-hero-cta lp-hero-cta--secondary">View demo</Link>
+        </div>
+
+        <div className="lp-trust-row" aria-label="Trust indicators">
+          <span><CheckCircle2 size={14} /> 240+ hiring teams</span>
+          <span><Bot size={14} /> AI-assisted screening</span>
+          <span><Rocket size={14} /> 3x faster shortlist</span>
+        </div>
+
         <section className="lp-results">
           <p className="lp-results-heading">
             <Sparkles size={13} /> {t.resultsHeading}
@@ -68,6 +81,31 @@ export default function HomePage() {
           </div>
         </section>
       </main>
+
+      <section className="lp-solution">
+        <div className="lp-solution-header">
+          <p className="lp-results-heading"><Sparkles size={13} /> How it works</p>
+          <h2>Built for hiring teams that want clarity, speed, and fairness.</h2>
+        </div>
+
+        <div className="lp-solution-grid">
+          <div className="lp-solution-card card-lift">
+            <span className="lp-solution-number">01</span>
+            <h3>Discover top talent</h3>
+            <p>Match candidates with the right role based on skills, experience, and role fit.</p>
+          </div>
+          <div className="lp-solution-card card-lift">
+            <span className="lp-solution-number">02</span>
+            <h3>Screen intelligently</h3>
+            <p>Use AI summaries and structured review signals to reduce manual effort.</p>
+          </div>
+          <div className="lp-solution-card card-lift">
+            <span className="lp-solution-number">03</span>
+            <h3>Hire with confidence</h3>
+            <p>Track applications, interviews, and decisions in one clear recruiter workflow.</p>
+          </div>
+        </div>
+      </section>
 
       {/* ── Dark feature band: matching + trust ── */}
       <section className="lp-dark-band">
@@ -183,6 +221,18 @@ export default function HomePage() {
               onToggle={() => setOpenFaq(openFaq === i ? -1 : i)}
             />
           ))}
+        </div>
+      </section>
+
+      <section className="lp-cta-panel">
+        <div className="lp-cta-panel-inner">
+          <div>
+            <p className="lp-results-heading"><Sparkles size={13} /> Ready to scale hiring?</p>
+            <h2>Build a stronger hiring engine for your team.</h2>
+          </div>
+          <Link to="/register" className="lp-hero-cta lp-hero-cta--large">
+            Start now <ArrowRight size={16} />
+          </Link>
         </div>
       </section>
 
