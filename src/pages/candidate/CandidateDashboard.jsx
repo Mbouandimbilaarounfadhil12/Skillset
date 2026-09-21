@@ -78,6 +78,26 @@ export default function CandidateDashboard() {
 
   const countLabel = (count, { singular, plural }) => `${count} ${count !== 1 ? plural : singular}`
 
+  const insightScore = useMemo(() => {
+    const applicationMomentum = Math.min(30, applications.length * 6)
+    const savedMomentum = Math.min(25, savedJobs.length * 5)
+    const interviewMomentum = Math.min(25, interviews.length * 8)
+    const profileMomentum = Math.min(20, completeness / 5)
+    return Math.min(100, Math.round(applicationMomentum + savedMomentum + interviewMomentum + profileMomentum))
+  }, [applications.length, savedJobs.length, interviews.length, completeness])
+
+  const nextActions = [
+    completeness < 90 ? 'Complete your profile to unlock higher match visibility.' : 'Your profile is strong and ready for premium opportunities.',
+    savedJobs.length > 0 ? 'Review your saved jobs and prioritize the strongest matches.' : 'Save 3 strategic roles to build a shortlist faster.',
+    interviews.length > 0 ? 'Prepare for interviews with tailored follow-up and role-specific messaging.' : 'Book a mock interview to improve your response quality.',
+  ]
+
+  const readinessBars = [
+    { label: 'Profile strength', value: completeness },
+    { label: 'Application readiness', value: Math.min(100, 60 + applications.length * 10) },
+    { label: 'Interview confidence', value: Math.min(100, 50 + interviews.length * 15) },
+  ]
+
   return (
     <div className="cd-shell">
       <div className="cd-blob cd-blob--main" />
@@ -164,6 +184,61 @@ export default function CandidateDashboard() {
               {countLabel(interviews.length, t.stats.interviews)}
             </div>
           </div>
+
+          <section className="cd-section">
+            <div className="cd-section-header">
+              <p className="cd-section-title">
+                <Sparkles size={14} /> Career insights
+              </p>
+              <span className="cd-insight-score">{insightScore}% readiness</span>
+            </div>
+
+            <div className="cd-insights-grid">
+              <div className="cd-insight-card cd-insight-card--accent">
+                <span className="cd-insight-label">Profile health</span>
+                <strong>{completeness}%</strong>
+                <small>{completeness >= 80 ? 'Strong positioning' : 'Improve key sections'}</small>
+              </div>
+              <div className="cd-insight-card">
+                <span className="cd-insight-label">Saved roles</span>
+                <strong>{savedJobs.length}</strong>
+                <small>{savedJobs.length > 0 ? 'Ready to prioritize' : 'Start building your shortlist'}</small>
+              </div>
+              <div className="cd-insight-card">
+                <span className="cd-insight-label">Interview traction</span>
+                <strong>{interviews.length}</strong>
+                <small>{interviews.length > 0 ? 'Momentum is building' : 'Schedule practice sessions'}</small>
+              </div>
+            </div>
+
+            <div className="cd-insight-panels">
+              <div className="cd-action-panel">
+                <h3>Next best actions</h3>
+                <ul>
+                  {nextActions.map(action => (
+                    <li key={action}>{action}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="cd-action-panel">
+                <h3>Readiness breakdown</h3>
+                <div className="cd-readiness-list">
+                  {readinessBars.map(metric => (
+                    <div key={metric.label} className="cd-readiness-row">
+                      <div className="cd-readiness-meta">
+                        <span>{metric.label}</span>
+                        <strong>{metric.value}%</strong>
+                      </div>
+                      <div className="cd-readiness-track">
+                        <span style={{ width: `${metric.value}%` }} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
 
           {/* Recommandations STELLA */}
           {recommendedJobs.length > 0 && (

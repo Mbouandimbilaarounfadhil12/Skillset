@@ -35,6 +35,44 @@ import GoogleAuthCallback     from '../features/integrations/GoogleAuthCallback'
 
 const NO_STELLA_ROUTES = ['/login', '/register', '/onboarding']
 
+const ROUTE_TITLES = {
+  '/': 'SkillSet | AI recruitment platform',
+  '/login': 'SkillSet | Login',
+  '/register': 'SkillSet | Register',
+  '/careers/:slug': 'SkillSet | Careers',
+  '/dashboard/candidate': 'SkillSet | Candidate Dashboard',
+  '/jobs': 'SkillSet | Job Search',
+  '/my-jobs': 'SkillSet | My Applications',
+  '/applications': 'SkillSet | Applications',
+  '/profile': 'SkillSet | Profile',
+  '/dashboard/employer': 'SkillSet | Employer Dashboard',
+  '/employer/jobs': 'SkillSet | Employer Jobs',
+  '/employer/jobs/new': 'SkillSet | Post a Job',
+  '/employer/candidates': 'SkillSet | Candidate Review',
+  '/employer/company': 'SkillSet | Company Profile',
+  '/employer/talent-pools': 'SkillSet | Talent Pools',
+  '/messages': 'SkillSet | Messages',
+  '/notifications': 'SkillSet | Notifications',
+  '/settings': 'SkillSet | Settings',
+  '/settings/integrations': 'SkillSet | Integrations',
+  '/dashboard/admin': 'SkillSet | Admin Overview',
+  '/admin/users': 'SkillSet | User Management',
+  '/admin/moderation': 'SkillSet | Moderation',
+  '/admin/analytics': 'SkillSet | Analytics',
+}
+
+function RouteMeta() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    const dynamicTitle = Object.entries(ROUTE_TITLES).find(([route]) => pathname === route || (route.includes(':') && pathname.startsWith(route.replace(':slug', ''))))
+    document.title = dynamicTitle ? dynamicTitle[1] : 'SkillSet'
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+  }, [pathname])
+
+  return null
+}
+
 // Renders STELLA on every authenticated page without remounting (preserves chat history)
 function GlobalChatbot() {
   const { user }     = useAuthStore()
@@ -53,6 +91,7 @@ function GlobalChatbot() {
 
 const AppRouter = () => (
   <BrowserRouter>
+    <RouteMeta />
     <Routes>
       {/* Public */}
       <Route path="/"                  element={<HomePage />} />
