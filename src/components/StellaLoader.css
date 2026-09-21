@@ -1,0 +1,43 @@
+.stella-loader-shell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--gray-850, #111215);
+}
+
+.stella-loader-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.stella-s {
+  font-family: var(--font-script, cursive);
+  font-size: 96px;
+  font-weight: 700;
+  color: var(--cherry, #8b2232);
+  line-height: 1;
+  animation: stella-pulse 1.6s ease-in-out infinite;
+  user-select: none;
+}
+
+@keyframes stella-pulse {
+  0%   { opacity: 1;   transform: scale(1); }
+  50%  { opacity: 0.4; transform: scale(0.88); }
+  100% { opacity: 1;   transform: scale(1); }
+}
+
+.stella-message {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white, #fff);
+  text-align: center;
+}
+
+.stella-sub {
+  font-size: 13px;
+  color: var(--gray-400, #888);
+  text-align: center;
+}

@@ -1,0 +1,149 @@
+/* ── Public Careers Page ─────────────────────────────────────────── */
+.cp-shell {
+  min-height: 100vh;
+  background: #FAFAFA;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Header */
+.cp-header {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 32px 24px;
+}
+.cp-header-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.cp-company-logo {
+  width: 64px; height: 64px; border-radius: 14px;
+  background: #2b4fbf; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; font-weight: 800; flex-shrink: 0;
+}
+.cp-company-name {
+  font-size: 22px; font-weight: 800; color: #1a1a1a; margin: 0 0 6px;
+}
+.cp-company-meta {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
+  font-size: 13px; color: #666;
+}
+.cp-company-meta span { display: flex; align-items: center; gap: 4px; }
+.cp-link {
+  display: inline-flex; align-items: center; gap: 4px;
+  color: #2b4fbf; text-decoration: none; font-weight: 500;
+}
+.cp-link:hover { text-decoration: underline; }
+
+/* Main */
+.cp-main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+.cp-section-head {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;
+}
+.cp-section-title { font-size: 17px; font-weight: 700; color: #1a1a1a; margin: 0; }
+.cp-job-count {
+  font-size: 12px; font-weight: 600; color: #2b4fbf;
+  background: #e8f0ff; padding: 3px 10px; border-radius: 20px;
+}
+
+/* Job card */
+.cp-jobs { display: flex; flex-direction: column; gap: 12px; }
+.cp-job-card {
+  background: #fff; border: 1px solid #eee; border-radius: 12px;
+  padding: 18px 20px; display: flex; align-items: center;
+  justify-content: space-between; gap: 16px;
+  transition: box-shadow .15s;
+}
+.cp-job-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+.cp-job-title { font-size: 15px; font-weight: 700; color: #1a1a1a; margin: 0 0 6px; }
+.cp-job-meta {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  font-size: 12px; color: #777; margin-bottom: 6px;
+}
+.cp-job-meta span { display: flex; align-items: center; gap: 3px; }
+.cp-job-skills { font-size: 11px; color: #999; margin: 0; }
+
+/* Apply button */
+.cp-apply-btn {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 9px 18px; background: #2b4fbf; color: #fff;
+  border: none; border-radius: 8px; font-size: 13px; font-weight: 600;
+  cursor: pointer; white-space: nowrap; transition: background .15s;
+}
+.cp-apply-btn:hover { background: #1f3a8a; }
+
+/* Empty / error / loader */
+.cp-empty, .cp-error-page {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 12px; padding: 60px 24px; color: #aaa; text-align: center;
+}
+.cp-loader {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 100vh;
+}
+.cp-spin { animation: spin 1s linear infinite; color: #2b4fbf; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Modal */
+.cp-modal-backdrop {
+  position: fixed; inset: 0; background: rgba(0,0,0,.4);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1000; padding: 16px;
+}
+.cp-modal {
+  background: #fff; border-radius: 16px; padding: 28px;
+  width: 100%; max-width: 520px; max-height: 90vh; overflow-y: auto;
+}
+.cp-modal-header {
+  display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 24px;
+}
+.cp-modal-title { font-size: 16px; font-weight: 700; color: #1a1a1a; margin: 0 0 2px; }
+.cp-modal-sub   { font-size: 12px; color: #888; margin: 0; }
+.cp-modal-close {
+  background: none; border: none; cursor: pointer; color: #999; padding: 2px;
+}
+.cp-modal-close:hover { color: #444; }
+
+/* Form */
+.cp-form { display: flex; flex-direction: column; gap: 16px; }
+.cp-label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: #444; }
+.cp-textarea {
+  resize: vertical; border: 1px solid #e0e0e0; border-radius: 8px;
+  padding: 10px 12px; font-size: 13px; color: #333; font-family: inherit;
+  min-height: 100px;
+}
+.cp-textarea:focus { outline: none; border-color: #2b4fbf; }
+.cp-file-btn {
+  display: flex; align-items: center; gap: 8px; position: relative;
+  border: 1px dashed #ccc; border-radius: 8px; padding: 10px 14px;
+  font-size: 13px; color: #666; cursor: pointer;
+}
+.cp-file-btn:hover { border-color: #2b4fbf; color: #2b4fbf; }
+.cp-file-input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.cp-submit-btn {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 12px; background: #2b4fbf; color: #fff; border: none;
+  border-radius: 8px; font-size: 14px; font-weight: 700; cursor: pointer;
+}
+.cp-submit-btn:hover:not(:disabled) { background: #1f3a8a; }
+.cp-submit-btn:disabled { opacity: .7; cursor: not-allowed; }
+.cp-form-error {
+  display: flex; align-items: center; gap: 8px; padding: 10px 14px;
+  background: #fde8ea; border-radius: 8px; color: #c42033; font-size: 13px;
+}
+
+/* Success */
+.cp-success {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 12px; padding: 24px 0; text-align: center;
+}
+.cp-success-icon { color: #166534; }
+.cp-success-title { font-size: 16px; font-weight: 700; color: #1a1a1a; margin: 0; }
+.cp-success-sub   { font-size: 13px; color: #666; margin: 0; }

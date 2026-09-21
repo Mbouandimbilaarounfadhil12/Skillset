@@ -1,0 +1,145 @@
+/* ─── Role selection shell ────────────────────────────────── */
+.reg-select-shell {
+  flex: 1;
+  min-height: calc(100vh - 65px);
+  background: linear-gradient(135deg, var(--surface-page) 0%, var(--surface-page-alt) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  gap: 40px;
+}
+
+.reg-select-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.reg-select-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.reg-select-header p { font-size: 15px; color: var(--text-secondary); }
+
+/* ─── Role cards ─────────────────────────────────────────── */
+.reg-select-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+  max-width: 660px;
+}
+
+.reg-role-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 28px 24px 0;
+  border-radius: 14px;
+  border: 1.5px solid var(--surface-border);
+  cursor: pointer;
+  overflow: hidden;
+  text-align: left;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  min-height: 260px;
+  background: var(--surface-card);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.reg-role-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+}
+
+.reg-role-card--candidate:hover { border-color: #c42033; }
+.reg-role-card--employer:hover  { border-color: #2164f3; }
+
+/* Icon */
+.reg-role-icon {
+  width: 52px; height: 52px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px;
+}
+
+.reg-role-card--candidate .reg-role-icon {
+  background: #fff0f2;
+  border: 1px solid #f5a8b0;
+  color: #c42033;
+}
+.reg-role-card--employer .reg-role-icon {
+  background: #f0f5ff;
+  border: 1px solid #a8c0f5;
+  color: #2164f3;
+}
+
+.reg-role-card-body { position: relative; z-index: 1; }
+
+.reg-role-card-body h2 {
+  font-size: 20px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;
+}
+
+.reg-role-card-body p {
+  font-size: 13px; color: var(--text-secondary); line-height: 1.6;
+}
+
+/* Card footer */
+.reg-role-card-footer {
+  position: relative; z-index: 1;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 0 18px;
+  font-size: 13px; font-weight: 600;
+  border-top: 1px solid var(--surface-border-soft);
+  margin-top: 20px;
+}
+
+.reg-role-card--candidate .reg-role-card-footer { color: #c42033; }
+.reg-role-card--employer  .reg-role-card-footer { color: #2164f3; }
+
+.reg-role-card-deco {
+  position: absolute;
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  bottom: -40px; right: -30px;
+  opacity: 0.06;
+  transition: opacity 0.3s;
+}
+
+.reg-role-card--candidate .reg-role-card-deco { background: #c42033; }
+.reg-role-card--employer  .reg-role-card-deco { background: #2164f3; }
+.reg-role-card:hover .reg-role-card-deco { opacity: 0.12; }
+
+/* Login link */
+.reg-select-login { font-size: 14px; color: var(--text-secondary); text-align: center; }
+.reg-select-login a { color: #c42033; font-weight: 500; }
+
+/* Back button */
+.reg-back-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 13px; color: var(--text-muted); background: none; border: none;
+  cursor: pointer; padding: 0; margin-bottom: 20px; transition: color 0.15s;
+}
+.reg-back-btn:hover { color: var(--text-primary); }
+
+/* Profile badge */
+.reg-profile-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 7px 14px;
+  background: #fff0f2;
+  border: 1px solid #f5a8b0;
+  border-radius: 20px;
+  font-size: 13px; font-weight: 500; color: #c42033;
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  .reg-select-cards { grid-template-columns: 1fr; max-width: 340px; }
+  .reg-role-card { min-height: 200px; }
+}

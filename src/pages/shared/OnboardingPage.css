@@ -1,0 +1,556 @@
+/* ─── Shell ─────────────────────────────────────────────────── */
+.ob-shell {
+  min-height: 100vh;
+  background: var(--surface-page);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+/* ─── Card ──────────────────────────────────────────────────── */
+.ob-card {
+  width: 100%;
+  max-width: 620px;
+  background: var(--surface-card);
+  border: 1px solid var(--surface-border);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.ob-card-header {
+  padding: 28px 32px 20px;
+  border-bottom: 1px solid var(--surface-border);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ob-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ob-logo-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--cherry);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: var(--font-script, cursive);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.ob-logo-text {
+  font-family: var(--font-script, cursive);
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--text-primary);
+}
+
+.ob-card-body {
+  padding: 28px 32px;
+  flex: 1;
+}
+
+.ob-card-footer {
+  padding: 20px 32px;
+  border-top: 1px solid var(--surface-border);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* ─── Progress ──────────────────────────────────────────────── */
+.ob-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ob-progress-track {
+  height: 4px;
+  background: var(--surface-border-soft);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.ob-progress-fill {
+  height: 100%;
+  background: var(--cherry);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.ob-progress-label {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ─── Section titles ────────────────────────────────────────── */
+.ob-section-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ob-sparkle {
+  color: var(--cherry-400);
+}
+
+.ob-section-sub {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+/* ─── Questions ─────────────────────────────────────────────── */
+.ob-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.ob-question {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ob-question-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.ob-question-hint {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: -6px;
+}
+
+/* ─── Text input ────────────────────────────────────────────── */
+.ob-input {
+  width: 100%;
+  background: var(--surface-border-soft);
+  border: 1px solid var(--surface-border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: var(--text-primary);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.ob-input:focus {
+  border-color: var(--cherry);
+}
+
+.ob-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* ─── Choice buttons ────────────────────────────────────────── */
+.ob-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ob-choices--multi {
+  gap: 8px;
+}
+
+.ob-choice {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--surface-border);
+  background: var(--surface-border-soft);
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+.ob-choice:hover {
+  border-color: var(--cherry-400);
+  color: var(--text-primary);
+}
+
+.ob-choice--active {
+  background: var(--cherry-tint);
+  border-color: var(--cherry);
+  color: var(--cherry-400);
+}
+
+/* ─── Buttons ───────────────────────────────────────────────── */
+.ob-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 11px 24px;
+  background: var(--cherry);
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.ob-btn-primary:hover:not(:disabled) {
+  background: var(--cherry-500);
+}
+
+.ob-btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ob-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 11px 16px;
+  background: none;
+  border: 1px solid var(--surface-border);
+  border-radius: 10px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.ob-btn-ghost:hover:not(:disabled) {
+  border-color: var(--text-muted);
+  color: var(--text-primary);
+}
+
+.ob-btn-ghost:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ─── Error ─────────────────────────────────────────────────── */
+.ob-error {
+  background: rgba(139, 34, 50, 0.15);
+  border: 1px solid rgba(139, 34, 50, 0.4);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: var(--cherry-400);
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+/* ─── Loading state ─────────────────────────────────────────── */
+.ob-loading-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: var(--text-primary);
+}
+
+.ob-loading-icon {
+  width: 72px;
+  height: 72px;
+  background: var(--cherry-tint);
+  border: 1px solid rgba(139, 34, 50, 0.3);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cherry-400);
+}
+
+.ob-loading-card h2 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.ob-loading-card p {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.ob-spinner {
+  color: var(--cherry-400);
+  animation: spin 1s linear infinite;
+}
+
+.ob-spinner-sm {
+  animation: spin 1s linear infinite;
+}
+
+/* ─── Done state ────────────────────────────────────────────── */
+.ob-done-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: var(--text-primary);
+}
+
+.ob-done-icon {
+  color: #4ade80;
+}
+
+.ob-done-card h2 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.ob-done-card p {
+  color: var(--text-secondary);
+}
+
+/* ─── CV offer ──────────────────────────────────────────────── */
+.ob-cv-offer {
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.ob-cv-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--cherry-tint);
+  border: 1px solid rgba(139, 34, 50, 0.3);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cherry-400);
+}
+
+.ob-cv-offer h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.ob-cv-offer p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 420px;
+}
+
+.ob-cv-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 320px;
+  margin-top: 8px;
+}
+
+.ob-cv-actions .ob-btn-primary,
+.ob-cv-actions .ob-btn-ghost {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ─── STELLA Loading — cursive S ───────────────────────────── */
+.ob-s-logo {
+  font-family: var(--font-script), cursive;
+  font-size: 96px;
+  line-height: 1;
+  color: var(--cherry);
+  animation: ob-s-pulse 1.6s ease-in-out infinite;
+  user-select: none;
+}
+
+@keyframes ob-s-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.88); }
+}
+
+/* ─── Searchable dropdown ───────────────────────────────────── */
+.ob-dropdown-wrapper {
+  position: relative;
+}
+
+.ob-dropdown-container {
+  position: relative;
+}
+
+.ob-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--surface-card);
+  border: 1.5px solid var(--cherry);
+  border-radius: 10px;
+  max-height: 240px;
+  overflow-y: auto;
+  z-index: 100;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.ob-dropdown-item {
+  padding: 10px 14px;
+  font-size: 14px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.ob-dropdown-item:hover,
+.ob-dropdown-item:focus {
+  background: var(--cherry-tint);
+  color: var(--cherry);
+}
+
+.ob-dropdown-item--active {
+  background: var(--cherry-tint);
+  color: var(--cherry);
+  font-weight: 600;
+}
+
+.ob-dropdown-item--custom {
+  color: var(--cherry);
+  font-style: italic;
+  border-top: 1px solid var(--surface-border-soft);
+}
+
+/* ─── Selected chip (searchable result) ─────────────────────── */
+.ob-selected-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--cherry-tint);
+  border: 1.5px solid var(--cherry);
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 14px;
+  color: var(--cherry);
+  font-weight: 600;
+  max-width: 100%;
+}
+
+.ob-selected-chip button {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: var(--cherry);
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+
+.ob-selected-chip button:hover { opacity: 1; }
+
+/* ─── "Autre" free-text input ───────────────────────────────── */
+.ob-other-input {
+  margin-top: 10px;
+  border-color: var(--cherry);
+  animation: ob-slide-in 0.2s ease;
+}
+
+@keyframes ob-slide-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Map picker address bar ────────────────────────────────── */
+.map-picker-address {
+  font-size: 13px;
+  color: var(--text-primary);
+  margin-top: 8px;
+  background: var(--cherry-tint);
+  border-left: 3px solid var(--cherry);
+  padding: 8px 12px;
+  border-radius: 0 6px 6px 0;
+  line-height: 1.5;
+}
+
+/* ─── Country + City combined card ─────────────────────────── */
+.ob-location-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 8px;
+}
+.ob-location-row--city { margin-top: 10px; }
+.ob-location-label {
+  flex-shrink: 0;
+  width: 44px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding-top: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+.ob-dropdown-container--flex { flex: 1; }
+.ob-selected-chip--inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  background: var(--cherry-tint);
+  border: 1.5px solid rgba(196, 32, 51, 0.35);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.ob-selected-chip--inline button {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: #c42033;
+  cursor: pointer;
+  padding: 1px;
+  opacity: 0.7;
+}
+.ob-selected-chip--inline button:hover { opacity: 1; }
+
+/* ─── Responsive ────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .ob-card-header,
+  .ob-card-body,
+  .ob-card-footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .ob-cv-offer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

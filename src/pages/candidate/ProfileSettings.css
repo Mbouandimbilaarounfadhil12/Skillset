@@ -1,0 +1,516 @@
+/* ═══════════════════════════════════════════════════════════
+   ProfileSettings — Indeed "GRACE DIVINE" style
+═══════════════════════════════════════════════════════════ */
+
+.ps-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--surface-page);
+}
+
+/* ─── Navbar ─────────────────────────────────────────────── */
+.ps-navbar {
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  height: 56px;
+  background: #ffffff;
+  border-bottom: 1px solid #d4d2d0;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  gap: 0;
+}
+
+.ps-brand {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  flex-shrink: 0;
+  margin-right: 32px;
+}
+
+.ps-logo-icon {
+  width: 34px;
+  height: 34px;
+  background: #c42033;
+  color: #fff;
+  font-family: var(--font-script, cursive);
+  font-weight: 700;
+  font-size: 18px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ps-logo-text {
+  font-family: var(--font-script, cursive);
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.ps-nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex: 1;
+}
+
+.ps-nav-link {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #595959;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.ps-nav-link:hover { color: #2d2d2d; }
+.ps-nav-link--active { color: #2d2d2d; font-weight: 600; border-bottom-color: #2d2d2d; }
+
+.ps-navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.ps-icon-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: #2d2d2d;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.ps-icon-btn:hover { background: #f3f2f1; color: #2d2d2d; }
+
+.ps-icon-badge {
+  position: absolute;
+  top: 4px; right: 4px;
+  background: #c42033;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+}
+
+/* ─── Main content ──────────────────────────────────────── */
+.ps-main { flex: 1; }
+
+.ps-content {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 36px 24px 64px;
+}
+
+/* ─── Profile header ────────────────────────────────────── */
+.ps-profile-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.ps-profile-left { flex: 1; }
+
+.ps-full-name {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+  margin-bottom: 14px;
+}
+
+.ps-contact-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.ps-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.ps-contact-add-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #c42033;
+  padding: 0;
+  transition: color 0.15s;
+}
+
+.ps-contact-add-btn:hover { color: #a01c2a; }
+
+.ps-contact-icon { color: var(--text-secondary); flex-shrink: 0; }
+
+/* ─── Visibility banner ─────────────────────────────────── */
+.ps-visibility-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  max-width: 380px;
+}
+
+.ps-visibility-banner--on {
+  background: #e7f4e0;
+  color: #2d7600;
+  border: 1px solid #b8e6a0;
+}
+
+.ps-visibility-banner--off {
+  background: var(--surface-border-soft);
+  color: var(--text-secondary);
+  border: 1px solid var(--surface-border);
+}
+
+.ps-vis-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.ps-vis-toggle {
+  margin-left: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  display: flex;
+  align-items: center;
+}
+
+/* ─── Avatar circle ─────────────────────────────────────── */
+.ps-avatar-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.ps-avatar-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #2d2d2d;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.ps-avatar-circle--clickable {
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.ps-avatar-circle--clickable:disabled { cursor: wait; opacity: 0.7; }
+
+.ps-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.ps-avatar-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.ps-avatar-circle--clickable:hover .ps-avatar-overlay,
+.ps-avatar-circle--clickable:focus-visible .ps-avatar-overlay {
+  opacity: 1;
+}
+
+.ps-avatar-input { display: none; }
+
+.ps-avatar-status {
+  font-size: 11px;
+  color: var(--text-secondary, #888);
+}
+
+.ps-avatar-status--error { color: #d9534f; }
+
+/* ─── Sections ──────────────────────────────────────────── */
+.ps-section { margin-bottom: 28px; }
+
+.ps-section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+}
+
+.ps-divider {
+  border: none;
+  border-top: 1px solid var(--surface-border);
+  margin: 24px 0;
+}
+
+/* ─── CV section ────────────────────────────────────────── */
+.ps-cv-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--surface-border);
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.ps-cv-icon {
+  width: 40px;
+  height: 40px;
+  background: #c42033;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ps-cv-info { flex: 1; }
+.ps-cv-name  { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+.ps-cv-date  { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+.ps-cv-more {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-size: 18px;
+  letter-spacing: 2px;
+  padding: 4px;
+}
+
+.ps-cv-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 16px;
+  border: 1px solid var(--surface-border);
+  background: var(--surface-card);
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.ps-cv-upload-btn:hover { background: var(--surface-border-soft); }
+
+/* ─── Accordion ─────────────────────────────────────────── */
+.ps-accordion-list {
+  border: 1px solid var(--surface-border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.ps-accordion-item {
+  border-bottom: 1px solid var(--surface-border);
+}
+
+.ps-accordion-item:last-child { border-bottom: none; }
+
+.ps-accordion-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 20px;
+  background: var(--surface-card);
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+  gap: 16px;
+}
+
+.ps-accordion-btn:hover { background: var(--surface-border-soft); }
+
+.ps-accordion-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ps-accordion-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.ps-accordion-sub {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.ps-accordion-arrow {
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.ps-accordion-arrow--open { transform: rotate(90deg); }
+
+.ps-accordion-body {
+  padding: 16px 20px 20px;
+  background: var(--surface-page);
+  border-top: 1px solid var(--surface-border);
+}
+
+/* ─── Form inside accordion ─────────────────────────────── */
+.ps-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ps-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ps-field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.ps-field input,
+.ps-field select,
+.ps-field textarea {
+  padding: 9px 12px;
+  border: 1px solid var(--surface-border);
+  border-radius: 4px;
+  font-size: 14px;
+  color: var(--text-primary);
+  outline: none;
+  background: var(--surface-card);
+  transition: border-color 0.15s;
+}
+
+.ps-field input:focus,
+.ps-field select:focus,
+.ps-field textarea:focus {
+  border-color: var(--text-muted);
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.06);
+}
+
+.ps-accordion-hint {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.ps-save-btn {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 16px;
+  background: #c42033;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+  box-shadow: 0 2px 6px rgba(196,32,51,0.2);
+}
+
+.ps-save-btn:hover { background: #a01c2a; }
+
+.ps-saved-msg {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #2d7600;
+  align-self: center;
+}
+
+/* ─── Review link ───────────────────────────────────────── */
+.ps-review-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  text-decoration: none;
+  color: inherit;
+  border-top: 1px solid var(--surface-border);
+  border-bottom: 1px solid var(--surface-border);
+  transition: background 0.15s;
+}
+
+.ps-review-link:hover { background: var(--surface-border-soft); color: inherit; }
+.ps-review-label { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 3px; }
+.ps-review-sub   { font-size: 13px; color: var(--text-secondary); }
+
+@media (max-width: 640px) {
+  .ps-nav { display: none; }
+  .ps-profile-header { flex-direction: column-reverse; }
+}

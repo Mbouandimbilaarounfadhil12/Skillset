@@ -1,0 +1,30 @@
+.pi-container {
+  margin: 16px 0;
+}
+
+.pi-progress-bar {
+  margin-top: 4px;
+}
+
+.pi-progress-track {
+  width: 100%;
+  height: 4px;
+  background-color: var(--surface-border-soft);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.pi-progress-fill {
+  height: 100%;
+  background-color: #C42033;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.pi-progress-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+  display: block;
+  text-align: right;
+}

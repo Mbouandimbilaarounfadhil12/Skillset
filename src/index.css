@@ -1,0 +1,239 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════════
+   Tailwind v4 — CSS-first theme tokens
+   Cherry = cramoisie profonde (#C42033)  |  Grays = zinc scale
+═══════════════════════════════════════════════════════════ */
+
+@theme {
+  /* ── Cherry — cramoisie profonde ────────────────────────── */
+  --color-cherry-50:  #FFF1F2;
+  --color-cherry-100: #FFE4E7;
+  --color-cherry-200: #FFC5CB;
+  --color-cherry-300: #FFA0AA;
+  --color-cherry-400: #FF6474;
+  --color-cherry-500: #E83348;
+  --color-cherry-600: #C42033;
+  --color-cherry-700: #A01828;
+  --color-cherry-800: #7D121E;
+  --color-cherry-900: #5A0D15;
+
+  /* ── Gray — zinc (riche, neutre chaud) ──────────────────── */
+  --color-gray-50:  #FAFAFA;
+  --color-gray-100: #F4F4F5;
+  --color-gray-200: #E4E4E7;
+  --color-gray-300: #D1D1D6;
+  --color-gray-400: #A1A1AA;
+  --color-gray-500: #71717A;
+  --color-gray-600: #52525B;
+  --color-gray-700: #3F3F46;
+  --color-gray-800: #27272A;
+  --color-gray-900: #18181B;
+
+  /* ── Typography ─────────────────────────────────────────── */
+  --font-sans:   'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-script: 'Dancing Script', cursive;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Variables CSS globales (utilisées par var() dans les .css)
+═══════════════════════════════════════════════════════════ */
+:root {
+  /* ── Grays (thème clair) ────────────────────────────────── */
+  --gray-900: #FAFAFA;
+  --gray-850: #F4F4F5;
+  --gray-800: #F4F4F5;
+  --gray-750: #E4E4E7;
+  --gray-700: #D1D1D6;
+  --gray-650: #C4C4CA;
+  --gray-600: #A1A1AA;
+  --gray-500: #71717A;
+  --gray-400: #52525B;
+  --gray-300: #3F3F46;
+  --gray-200: #27272A;
+  --gray-100: #18181B;
+  --white:    #18181B;
+
+  /* ── Cherry ─────────────────────────────────────────────── */
+  --cherry-900: #FFF1F2;
+  --cherry-800: #FFE4E7;
+  --cherry-700: #FFC5CB;
+  --cherry:     #C42033;
+  --cherry-500: #E83348;
+  --cherry-400: #FFA0AA;
+  --cherry-glow: rgba(196, 32, 51, 0.10);
+  --cherry-tint: rgba(196, 32, 51, 0.06);
+
+  /* ── Typography ──────────────────────────────────────────── */
+  --font:        'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-script: 'Dancing Script', cursive;
+
+  /* ── Semantic surface tokens (light) ────────────────────── */
+  --surface-page:     #FAFAFA;
+  --surface-page-alt: #FFF1F2;
+  --surface-card:     #FFFFFF;
+  --surface-nav:      rgba(255, 255, 255, 0.75);
+  --surface-border:   #E4E4E7;
+  --surface-border-soft: #F4F4F5;
+  --text-primary:     #18181B;
+  --text-secondary:   #52525B;
+  --text-muted:       #71717A;
+
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: -0.011em;
+  color-scheme: light;
+  color: var(--text-primary);
+  background: var(--surface-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --surface-page:     #18181B;
+  --surface-page-alt: #241417;
+  --surface-card:     #232327;
+  --surface-nav:      rgba(24, 24, 27, 0.8);
+  --surface-border:   #333338;
+  --surface-border-soft: #2A2A2E;
+  --text-primary:     #FAFAFA;
+  --text-secondary:   #C4C4CA;
+  --text-muted:       #A1A1AA;
+
+  color: var(--text-primary);
+  background: var(--surface-page);
+}
+
+/* ── Reset minimal ──────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: #FAFAFA;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: var(--cherry);
+  text-decoration: none;
+  transition: color 0.18s;
+}
+
+a:hover {
+  color: #A01828;
+}
+
+/* ── Hiérarchie typographique ───────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: #18181B;
+}
+
+h1 { font-size: 2rem;    }
+h2 { font-size: 1.375rem; }
+h3 { font-size: 1.125rem; letter-spacing: -0.015em; }
+
+p {
+  line-height: 1.65;
+  color: #52525B;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: var(--font);
+  letter-spacing: inherit;
+}
+
+/* ── Scrollbar discrète ─────────────────────────────────────── */
+::-webkit-scrollbar       { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #D1D1D6; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #A1A1AA; }
+
+/* ═══════════════════════════════════════════════════════════
+   Animations — keyframes + tokens Tailwind v4
+═══════════════════════════════════════════════════════════ */
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.90); }
+  to   { opacity: 1; transform: scale(1);    }
+}
+@keyframes slide-right {
+  from { opacity: 0; transform: translateX(-14px); }
+  to   { opacity: 1; transform: translateX(0);     }
+}
+@keyframes pop-in {
+  0%   { opacity: 0; transform: scale(0.80) translateY(10px); }
+  70%  { transform: scale(1.04) translateY(-2px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px);    }
+  50%       { transform: translateY(-6px);  }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* Tokens d'animation Tailwind v4 */
+@theme {
+  --animate-fade-up:    fade-up    0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-fade-in:    fade-in    0.35s ease both;
+  --animate-scale-in:   scale-in   0.4s  cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  --animate-slide-right: slide-right 0.35s ease both;
+  --animate-pop-in:     pop-in     0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  --animate-float:      float      3s ease-in-out infinite;
+}
+
+/* ── Utilitaires d'animation réutilisables ───────────────── */
+.card-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.10);
+}
+.card-lift-sm {
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.card-lift-sm:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+.icon-bounce {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.group:hover .icon-bounce {
+  transform: scale(1.18) rotate(-4deg);
+}
+.arrow-slide {
+  transition: transform 0.2s ease;
+}
+.group:hover .arrow-slide {
+  transform: translateX(4px);
+}
